@@ -1,0 +1,22 @@
+<div style="text-align:center">
+  <h1>
+    Improve your Speaking English skills.
+  </h1>
+</div>
+
+<form class= "container" [formGroup] = "formEnglish">
+  <h2>{{ title }}:</h2>
+  <p *ngIf="questionShowed">{{ question }}</p><p *ngIf="!questionShowed">&nbsp;</p>
+  <br>
+  <input type="text" name="answer" placeholder="answer here..." [(ngModel)]="speechData" formControlName="answer" />
+  <button (click)="repeatQuestion()">
+    <img src="..\assets\img\icon_play.png" alt="Play"/>
+  </button>
+  <button (click)="showQuestion()">
+    <img src="{{ pathShowIcon }}" alt="Show/Hide question"/>
+  </button>
+  <button (click)="nextQuestion()">
+    <img src="..\assets\img\icon_arrow_right.png" alt="Next"/>
+  </button>
+
+</form>
